@@ -8,7 +8,6 @@ namespace WebAPIDemoForArticle.DataAccess
 {
     public class MongoDBAccessor
     {
-
         /// <summary>
         /// The link to the MongoDB database
         /// </summary>
@@ -26,7 +25,7 @@ namespace WebAPIDemoForArticle.DataAccess
         /// Runs a query to get all the binary JSON (BSON) documents in the "Weather Forecasts" collection,
         /// using MongoDB's Find() method.
         /// </summary>
-        public List<WeatherForecast> GetForecastsAsync()
+        public List<WeatherForecast> GetForecasts()
         {
             IMongoCollection<WeatherForecast> collection = _database.GetCollection<WeatherForecast>(_forecastCollection);
             return collection.Find(new BsonDocument()).ToList();
