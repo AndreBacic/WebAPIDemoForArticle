@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using WebAPIDemoForArticle.DataAccess;
 
@@ -19,6 +20,18 @@ namespace WebAPIDemoForArticle.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             return _accessor.GetForecasts();
+        }
+
+        [HttpPost]
+        public IActionResult Post(WeatherForecast forecast)
+        {
+            if (forecast is null ||
+                string.IsNullOrWhiteSpace(forecast.Summary))
+            {
+                return StatusCode(StatusCodes.Status422UnprocessableEntity);
+            }
+            _accessor.CreateForecast(forecast);
+            return StatusCode(StatusCodes.Status201Created);
         }
     }
 }

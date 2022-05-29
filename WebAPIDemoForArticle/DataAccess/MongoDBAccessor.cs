@@ -30,5 +30,13 @@ namespace WebAPIDemoForArticle.DataAccess
             IMongoCollection<WeatherForecast> collection = _database.GetCollection<WeatherForecast>(_forecastCollection);
             return collection.Find(new BsonDocument()).ToList();
         }
+        /// <summary>
+        /// Runs a query to insert a new weather forecast into the Weather Forecasts collection
+        /// </summary>
+        public void CreateForecast(WeatherForecast forecast)
+        {
+            _database.GetCollection<WeatherForecast>(_forecastCollection)
+                .InsertOne(forecast);
+        }
     }
 }
