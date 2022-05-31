@@ -13,13 +13,26 @@ html {
     font-family: "Segoe UI", "Ubuntu", sans-serif;
 }
 
-main {
+.main {
     width: 100%;
     min-height: 100%;
+    padding: 0.25rem 2rem;
     text-align: center;
 }
 
-h1 {
+.main p {
+    max-width: 40rem;
+    margin: 0 auto;
+    border-bottom: 2px solid #ccc;
+    padding: 1rem 0;
+}
+
+.main p:first-of-type {
+    margin-top: 1rem;
+    border-top: 2px solid #ccc;
+}
+
+.title {
     font-size: 3rem;
     font-weight: 400;
     margin-top: 0;
@@ -27,21 +40,13 @@ h1 {
     padding-top: 4rem;
 }
 
-h2 {
+.title2 {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 
-p {
-    max-width: 40rem;
-    margin: 0 auto;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 0;
-}
-
-form {
+.form {
     max-width: 40rem;
     margin: 0 auto 2rem;
     display: grid;
@@ -49,20 +54,39 @@ form {
     row-gap: 0.5rem;
 }
 
-label {
+.label {
     padding-right: 1rem;
     text-align: right;
 }
 
-input {
-    border: 1px solid #ccc;
+.input {
+    width: 100%;
+    border: 2px solid #aaa;
+    background-color: #fff;
     padding: 0.125rem;
     font-size: 1rem;
-    width: 100%;
+    font-family: "Segoe UI", "Ubuntu", sans-serif;
 }
 
-input:last-child {
+.input[type="submit"] {
     margin: 0 auto;
     width: 50%;
     grid-column: 1 / -1;
+}
+
+.input[type="submit"]:hover {
+    border-color: #555;
+    background-color: #999;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .input[type="submit"] {
+        width: 90%;
+        grid-column: 1 / 2;
+    }
 }

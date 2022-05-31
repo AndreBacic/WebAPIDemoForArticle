@@ -8,16 +8,16 @@
     <script src="js/site.js" defer></script>
 </head>
 <body>
-    <main>
-        <h1>Record a New Weather Forecast</h1>
-        <form id="createForcastForm" action="javascript:void(0)" onsubmit="createForecast().then()">
-            <label for="temperatureC">The Predicted Temperature in °C</label>
-            <input id="temperatureC" type="number" value="20">
-            <label for="date">Date and Time of Occurrence</label>
-            <input id="date" type="datetime-local">
-            <label for="summary">Summary</label>
-            <input id="summary" type="text">
-            <input type="submit" value="Create">
+    <main class="main">
+        <h1 class="title">Record a New Weather Forecast</h1>
+        <form id="createForcastForm" class="form" action="javascript:void(0)" onsubmit="createForecast().then()">
+            <label  class="label" for="temperatureC">The Predicted Temperature in °C</label>
+            <input id="temperatureC" class="input" type="number" value="20">
+            <label  class="label" for="date">Date and Time of Occurrence</label>
+            <input id="date" class="input" type="datetime-local">
+            <label  class="label" for="summary">Summary</label>
+            <input id="summary" class="input" type="text">
+            <input type="submit" class="input" value="Create">
         </form>
         <a href="index.html">Back to home</a>
     </main>
