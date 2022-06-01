@@ -31,7 +31,8 @@ namespace WebAPIDemoForArticle.DataAccess
             return collection.Find(new BsonDocument()).ToList();
         }
         /// <summary>
-        /// Runs a query to insert a new weather forecast into the Weather Forecasts collection
+        /// Runs a query to insert a new weather forecast into the Weather Forecasts collection, 
+        /// using MongoDB's InsertOne() method.
         /// </summary>
         public void CreateForecast(WeatherForecast forecast)
         {

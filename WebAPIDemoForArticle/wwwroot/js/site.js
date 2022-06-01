@@ -3,7 +3,7 @@
     let temperatureC = document.getElementById('temperatureC').value
     let summary = document.getElementById('summary').value
 
-    await fetch('/weatherForecast', {
+    let response = await fetch('/weatherForecast', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -14,7 +14,11 @@
             Summary: summary
         })
     })
-    window.location = "/"
+    if (response.status < 400) { // no error from POSTing form data
+        window.location = "/"
+        return
+    }
+    alert("Error: problem creating forecast")
 }
 
 async function renderForecastData() {

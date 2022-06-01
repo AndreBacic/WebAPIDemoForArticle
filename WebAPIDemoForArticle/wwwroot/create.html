@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Forecast</title>
+    <title>Record New Weather Forecast</title>
     <link rel="stylesheet" href="css/site.css">
     <script src="js/site.js" defer></script>
 </head>
@@ -11,11 +11,11 @@
     <main class="main">
         <h1 class="title">Record a New Weather Forecast</h1>
         <form id="createForcastForm" class="form" action="javascript:void(0)" onsubmit="createForecast().then()">
-            <label  class="label" for="temperatureC">The Predicted Temperature in °C</label>
+            <label class="label" for="temperatureC">The Predicted Temperature in °C</label>
             <input id="temperatureC" class="input" type="number" value="20">
-            <label  class="label" for="date">Date and Time of Occurrence</label>
+            <label class="label" for="date">Date and Time of Occurrence</label>
             <input id="date" class="input" type="datetime-local">
-            <label  class="label" for="summary">Summary</label>
+            <label class="label" for="summary">Summary</label>
             <input id="summary" class="input" type="text">
             <input type="submit" class="input" value="Create">
         </form>
